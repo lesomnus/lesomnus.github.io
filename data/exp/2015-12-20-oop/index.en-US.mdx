@@ -1,0 +1,39 @@
+---
+title: Advanced Tic-Tac-Toe 
+sub: Project Conducted in the OOP and Data Structure Class
+---
+import { Image } from '@data/figure'
+import capture1 from './capture1.png'
+import capture2 from './capture2.png'
+import capture3 from './capture3.png'
+
+The goal of this project is to develop an Advanced Tic-Tac-Toe game.
+It is required to design appropriate classes and should use two or more data structures.
+
+<figure>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+		<Image src={capture1} alt="Intro" />
+		<Image src={capture2} alt="Intro" />
+		<Image src={capture3} alt="Intro" />
+    </div>
+    <figcaption>UI of the Application</figcaption>
+</figure>
+
+I designed the classes as follows:
+
+- `Card` holds a shape and number.
+- `Player` holds one or more `Card`s.
+- `Slot` holds one or more `Card`s and can accept additional `Card`s based on certain conditions.
+- `Board` holds one or more `Slot`s and can check if a bingo is made.
+- `Dealer` creates unique `Card`s.
+- `Game` initializes other classes and updates the state of the game.
+
+To enable getting a random `Card` from `Player`, `Card` was managed as a *Linked-List*.
+As `Board` needs to search for a bingo in a topology composed of `Slot`, `Slot` were managed as a *Graph*
+*Dealer* holds randomly generated unique numbers in a *Queue*.
+Since the combination of the shape and number of `Card` should be unique and only one instance should exist in a single session of the game,
+`Dealer` is designed to be the only instance that can instantiate `Card` as a `std::unique_ptr`.
+
+As an additional feature, I implemented the funtion to save and load the state of the game as *JSON*.
+The loading feature includes a logic to verify the validity of the state of the game.
+

@@ -1,0 +1,17 @@
+---
+title: Implement 𝐎(𝟏) Scheduler
+sub: Project Conducted in the OS Class
+---
+import { Image } from '@data/figure'
+import result from './result.png'
+
+<Image src={result} caption="Test Result" />
+
+The goal of project is to implement an *O(1) Scheduler* to pass the *Alarm-priority Test* of [*Pintos*](https://web.stanford.edu/~ouster/cgi-bin/cs140-spring20/pintos/pintos_1.html), an educational operating system developed by Stanford University.
+I was the only student in this class who passed the test, and received the highest grade.
+
+The *O(1) Scheduler* is composed of two arrays of the same size as the number of priority levels, each containing a *Run Queue*.
+These arrays represent the *Active* and *Expired* task lists.
+Processes in the *Active* array are executed in order of priority from the highest-priority *Run Queue*, and processes that have finished their tasks are moved to the *Expired* array.
+When all *Run Queue*s in the *Active* array are empty, the two arrays are swapped.
+If the arrays are iterated to find a non-empty *Run Queue*, it would be an *O(N)* operation, but using a *Bitmap* allows finding a non-empty queue in *O(1)* time.

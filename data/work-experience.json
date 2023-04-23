@@ -1,0 +1,32 @@
+[
+	{
+		"meta": {
+			"title": "Software Engineer",
+			"date": {
+				"from": "2020-03-01"
+			}
+		},
+		"body": {
+			"en-US": {
+				"company_name": "ThorDrive",
+				"activities": [
+					"Design and development of teleoperation system",
+					"Design and development of performance-critical components",
+					"Design and development of multiple company-wide shared libraries",
+					"Design and development of in-vehicle computer network",
+					"Presented 3 times at company-wide technical seminars"
+				]
+			},
+			"ko-KR": {
+				"company_name": "토르드라이브",
+				"activities": [
+					"원격 조종 시스템 설계 및 개발",
+					"Performance-Critical 컴포넌트 설계 및 개발",
+					"차량내 컴퓨터 네트워크 설계 및 개발",
+					"다수의 사내 공용 라이브러리 설계 및 개발",
+					"사내 기술 세미나 3회 발표"
+				]
+			}
+		}
+	}
+]

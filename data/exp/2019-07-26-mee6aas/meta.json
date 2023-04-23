@@ -1,0 +1,18 @@
+{
+	"tags": [
+		"GoLang",
+		"TypeScript",
+		"Node.js",
+		"Docker",
+		"gRPC",
+		"Pinned",
+		"Awarded",
+		"Published"
+	],
+	"refs": [
+		{
+			"kind": "GitHub",
+			"repo": "mee6aas/zeep"
+		}
+	]
+}

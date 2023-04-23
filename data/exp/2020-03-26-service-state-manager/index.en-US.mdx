@@ -1,0 +1,10 @@
+---
+title: State Manager for Passenger Service
+---
+
+This is a module that manages the passenger service state of Air-Ride, which has been introduced at <abbr title="Incheon International Airport">ICN</abbr>.
+It is developed to assist the system to operate within expected scenarios by determining whether the state transitions resulting from the interaction of the <abbr title="Human-Machine Interface">HMI</abbr> are appropriate.
+Additionally, since it periodically transmits the vehicle's status to the airport control center, any situations that require the administrator's intervention can be immediately known at the control center.
+The state machine diagram created during development represents all the states described in the ICN project, which has greatly facilitating communication within the project.
+As many modules in the vehicle depend on the passenger service state, it is also widely used in testing the functionality of other modules.
+Therefore, a feature for reproducing specific scenarios has also been implemented.

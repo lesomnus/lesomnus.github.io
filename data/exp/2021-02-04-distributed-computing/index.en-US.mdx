@@ -1,0 +1,11 @@
+---
+title: Distributed Computing System for Autonomous Driving System
+---
+
+I designed a distributed computing system to distribute the load of the autonomous driving system and increase stability.
+Considering cost optimization and equipment supply, I used multiple network switches with appropriate performance instead of using a single high-performance network switch.
+To ensure stability, I isolated the network according to the type of sensor instead of stacking network switches, and the computing units are connected to multiple networks using two or more <abbr title="Network Interface Card">NIC</abbr>s.
+I used network interface bonding if necessary to meet performance requirements.
+For installation convenience, I used *Ansible*, and to reduce internet access costs during installation, I used a single computer as a proxy to cache the necessary data.
+I also set up a network file system accessible from all computing units for debugging and building on-site.
+I synchronized the time of all network devices, including sensors, using <abbr title="Precision Time Protocol">PTP</abbr>.

@@ -1,0 +1,15 @@
+.content {
+	text-align: justify;
+
+	>* {
+		@apply my-4;
+	}
+
+	p+ul {
+		@apply -mt-3;
+	}
+
+	:global(.dark) & figure {
+		filter: brightness(0.9);
+	}
+}

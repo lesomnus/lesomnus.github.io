@@ -1,0 +1,15 @@
+---
+title: Designing a Synchronous Logic Circuit
+sub: Project Conducted in the Logic Circuit Class
+---
+import { Image } from '@data/figure'
+import circuit_diagram from './circuit-diagram.png'
+
+<Image src={circuit_diagram} caption="Circuit Diagram" />
+
+The goal of this project is to design and create a circuit using logic components and a *555-timer* to sequentially display given numbers on a *7-segment* display every one second.
+My numbers were 0, 1, and 3.
+
+The circuit was implemented as an up-counter with a modulus of 3 using two *negative-edge-triggered J-K flip-flop*s.
+When the counter outputs 2, both *flip-flop*s are preset, as 3 is represented in binary as 11<sub>(2)</sub>.
+An OR gate was used to output 0 by taking the *Q* of the first *flip-flop* and the *~Q* of the second *flip-flop* as inputs.

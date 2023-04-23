@@ -1,0 +1,10 @@
+.read-more {
+	&>*:first-child {
+		display: inline;
+	}
+
+	// Must be <Link />
+	&>a:last-child {
+		margin-left: 0.5rem;
+	}
+}

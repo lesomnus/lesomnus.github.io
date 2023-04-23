@@ -1,0 +1,24 @@
+---
+title: Bifrost
+sub: 코드 인터뷰 관리 시스템
+---
+import { Image, Mermaid } from '@data/figure'
+import interviewee from './interviewee.jpeg'
+import interviewer from './interviewer.jpeg'
+import system_overview from './system-overview.mmd'
+
+<div className="grid grid-cols-2 gap-2">
+	<Image src={interviewer} caption="면접관 페이지" />
+	<Image src={interviewee} caption="지원자 페이지" />
+</div>
+
+본 프로젝트는 회사에서 코드 인터뷰 수요가 증가함에 따라 이를 효과적으로 관리하기 위해 개인 시간에 진행되었습니다.
+Bifrost는 면접관과 지원자를 위한 두 개의  <abbr title="Single Page Application">SPA</abbr>로 구성되어 있습니다.
+또한 인터뷰의 진행 상태를 알려주는 메일링 시스템이 구현되어 있으며, 지원자는 자신의 코드를 웹페이지로 제출하여 결과를 실시간으로 확인할 수 있습니다.
+
+<Mermaid src={system_overview} caption="시스템 개요" />
+
+서버는 확장성을 위해 독립된 메시지 큐 서비스를 사이에 두고 API 서버와 작업을 처리하는 서버로 분리되어 있습니다.
+작업 요청 시 DB의 원자적 연산을 활용하여 작업의 중복을 방지하였습니다.
+작업을 처리하는 서버는 컨테이너 안에서 코드를 빌드하고 실행하여 제출된 코드로부터 호스트를 보호합니다.
+*Redis*는 제출한 코드의 실행 결과 로그를 실시간으로 전달할 때 버퍼로 사용되었습니다.

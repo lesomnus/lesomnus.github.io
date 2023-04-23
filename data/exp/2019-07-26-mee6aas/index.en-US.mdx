@@ -1,0 +1,36 @@
+---
+title: Mee6aaS
+sub: Workflow Aware Low-latency Serverless Platform
+---
+import { Image, Mermaid } from '@data/figure'
+import overview from './overview.svg'
+import handover from './handover.svg'
+
+<Image src={overview} caption="System Architecture Overview" />
+
+The serverless platform developed for research purposes aims to minimize the cost of messaging between functions and accessing external storage on data dependencies in workflows running in a serverless environment.
+Two papers related to this project have been published in *<abbr title="Institute of Electrical and Electronics Engineers">IEEE</abbr> <abbr title="Mobile Ad-Hoc and Smart Systems">MASS</abbr> 2019*and *<abbr title="International Conference on Interdisciplinary Research on Computer Science, Psychology, and Education">ICICPE</abbr> 2019*, respectively.
+In addition, it has been used in the *<abbr title="Institute of Information & Communications Technology Planning & Evaluation">IITP</abbr>* research project being carried out in our laboratory.
+
+The key idea behind *Mee6aaS* is to utilize locality.
+Existing serverless platforms did not consider executing workflows composed of serverless functions.
+The orchestrator that executes the workflow simply requests the platform to execute each function in order, and each execution request is distributed to multiple nodes in the cluster by a load balancer.
+*Mee6aaS* provides advantages in executing workflows by deploying all functions executed by the orchestrator on a single node.
+It also recognizes patterns in the workflow to mitigate Cold Starts.
+
+*Zeep* is a local agent that runs on each Worker node and sends execution commands of a function to an idle container when a function execution is requested.
+The execution command is received by *Kyle*, a proxy agent that runs on each container.
+*Kyle* performs the same role as *Zeep*, but sends the execution command of a function to an idle runtime process when a function execution is requested.
+Therefore, multiple runtime processes can run in a single container in *Mee6aaS*.
+However, to ensure performance isolation for each function instance, only sequential functions share the same container.
+
+Of course, *Zeep* could also perform the role of managing the runtime processes, which is currently done by *Kyle*.
+However, if *Kyle* is not present, *Zeep* always needs to check the status before sending a message to the container, which increases the message delivery latency.
+This is because, when considering Cold Start, *Zeep* delays the deletion of recently executed function instances, which may be in a stopped state.
+
+<Image src={handover} caption="Handover Procedure" dark-invert />
+
+*Mee6aaS* addresses Cold Start mitigation by pre-creating containers and launching *Kyle* as a local agent on each worker node.
+For a workflow with single function or parallelly executed functions, there is only one runtime process running in a container, making *Kyle* unnecessary and even causing overhead.
+So in this case, *Kyle* performs a handover to directly connect the runtime process to *Zeep*.
+To achieve this, *Zeep* and *Kyle* are designed to provide a completely identical service interface for the runtime.

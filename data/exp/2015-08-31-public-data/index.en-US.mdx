@@ -1,0 +1,22 @@
+---
+title: Location-based Gallery Community
+sub: App Contest for Ideas Utilizing Public Data
+---
+import { Image } from '@data/figure'
+import login from './login.png'
+import post from './post.png'
+
+<div className="grid grid-cols-2 gap-2">
+	<Image src={login} caption="Login Page" />
+	<Image src={post} caption="Post Page" />
+</div>
+
+The objective of this contest is to implement a service using public data.
+We developed a community application using nationwide tourist attraction data.
+The server periodically queries public data for tourist attractions and creates gallery boards based on the attraction names.
+Users can share photos or videos taken at these attractions on the corresponding board.
+My role was to develop the server that provides information of the board through *REST* and the module that retrieves information from the server on *Android*.
+
+The web server was implemented using *Node.js* with the *Express* framework.
+It includes a feature that filters out irrelevant photo uploads by cross-referencing the metadata of the uploaded photos with the *GPS* values of the corresponding tourist attractions.
+This confirms whether the photo was actually taken at the location or not.

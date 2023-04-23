@@ -1,0 +1,19 @@
+---
+title: 라이다 Parser
+---
+import { Image } from '@data/figure'
+import benchmark from './benchmark.svg'
+
+<Image src={benchmark} caption="Benchmark" />
+
+라이다 Parser는 라이다 패킷으로부터 포인트 클라우드를 만드는 것이 목적입니다.
+라이다 제조사에서 라이브러리를 제공하지만, 커스텀 기능이 필요했고 해당 기능이 패킷 파싱 과정에 통합되면 zero-cost로 구현될 수 있기 때문에 드라이버를 직접 구현하게 되었습니다.
+또한 공식 라이브러리가 패킷 파싱뿐만 아니라 네트워크 스택까지 통합되어 있었고 라이다 모델별로 패킷 구조가 다르기 때문에 사용하기가 불편했습니다.
+제가 구현한 라이브러리는 패킷 정보에 접근하는 통일 인터페이스를 제공하며 공식 라이브러리보다 3배 정도 좋은 성능을 보여줍니다.
+
+성능을 향상하기위해 다음 사항이 고려되었습니다:
+- 네트워크 스택에서 패킷에 할당된 메모리 공간을 그대로 사용.
+- Polymorphic Object를 스택에 초기화.
+- 포인트 클라우드를 만드는 데 사용되는 단위 벡터 캐시.
+- 메모리 지역화를 고려한 데이터 정렬.
+- <abbr title="Single Instruction Multiple Data">*SIMD*</abbr> 활용.

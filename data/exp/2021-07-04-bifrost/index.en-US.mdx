@@ -1,0 +1,25 @@
+---
+title: Bifrost
+sub: Code Interview Management System
+---
+import { Image, Mermaid } from '@data/figure'
+import interviewee from './interviewee.jpeg'
+import interviewer from './interviewer.jpeg'
+import system_overview from './system-overview.mmd'
+
+<div className="grid grid-cols-2 gap-2">
+	<Image src={interviewer} caption="Interviewer Page" />
+	<Image src={interviewee} caption="Interviewee Page" />
+</div>
+
+This project was carried out in personal time to effectively manage the increasing demand for code interviews in the workplace.
+Bifrost includes two <abbr title="Single Page Application">SPA</abbr>s for both the interviewer and interviewee.
+It also includes a mailing system to notify the interview's progress.
+Interviewers can submit their code and check the results in real-time.
+
+<Mermaid src={system_overview} caption="System Overview" />
+
+The server is divided into a API server and a processing server, with an independent message queue service in between for scalability.
+Duplicate tasks are prevented by utilizing atomic operations in the database during task requests.
+The processing server builds and runs the code inside a container to protect the host from the submitted code.
+Redis was used as a buffer to deliver real-time logs of the execution results of submitted code.

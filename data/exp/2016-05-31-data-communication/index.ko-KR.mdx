@@ -1,0 +1,12 @@
+---
+title: 시리얼 포트 통신 시스템 설계
+sub: 데이터 통신 및 실습 강의 설계 프로젝트
+---
+import { Image } from '@data/figure'
+import demo from './demo.png'
+
+<Image src={demo} caption="Demo" />
+
+본 프로젝트는 *Point to Point Protocol*(*PPP*)과 이를 사용한 1:1 채팅 프로그램을 구현하는 것이 목표입니다.
+PPP는 *Segmentation & Reassembly*, *Checksum*, *Multi-thread*, *Ring Buffer*, *Sliding Window Flow Control & Error Control*, 그리고 *Byte Stuffing* 기능을 포함해야 합니다.
+저는 이 수업에서 *Go-Back-N*과 *Piggyback*을 이용한 *Bidirectional Full-Duplex* 통신을 구현한 유일한 수강생으로, 최고점을 받았습니다.

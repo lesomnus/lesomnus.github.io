@@ -1,0 +1,17 @@
+---
+title: SLAM Framework
+sub: High-definition 3D Map Creation
+---
+import { Excerpt } from '@data/excerpt'
+
+<Excerpt>
+> <small>Please note that I did not implement any <abbr title="Simultaneous Localization and Mapping">SLAM</abbr> algorithms in this project.</small>
+
+The goal of this project is to implement a framework for creating high-precision 3D maps from lidar data.
+I have implemented a framework that runs modules used for map creation on multiple machines in a distributed manner and provides an interface for accessing the aggregated map information.
+</Excerpt>
+
+The program was intended for internal use only, and to simplify the system, it was implemented without an API server.
+Modules for creating maps are executed in separate processes, and the API provided at the library level performs transactions directly on the database.
+To minimize database access, frequently accessed data is cached locally, and changes are only updated locally by tracking database events.
+In addition, an abstraction layer that uses the file system as a backend is provided for offline where ther database is not accessible.

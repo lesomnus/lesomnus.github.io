@@ -1,0 +1,10 @@
+.hlist {
+	&>li {
+		display: inline;
+
+		&:not(:last-child)::after {
+			@apply mx-2;
+			content: "•";
+		}
+	}
+}

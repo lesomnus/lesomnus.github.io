@@ -1,0 +1,30 @@
+.checkBox {
+	display: flex;
+	align-items: center;
+
+	@apply gap-2;
+
+	cursor: pointer;
+
+	& input {
+		appearance: none;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+
+		transition-property: transform;
+		transition-duration: 300ms;
+		transition-timing-function: cubic-bezier(0, 0, 0, 2.5);
+
+		@apply bg-slate-400;
+
+		&:checked {
+			@apply bg-sky-400;
+			transform: scale(1.3);
+
+			.dark & {
+				@apply bg-sky-600;
+			}
+		}
+	}
+}

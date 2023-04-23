@@ -1,0 +1,12 @@
+---
+title: Monitoring Dashboard
+---
+import { Image } from '@data/figure'
+import capture from './capture.png'
+
+<Image src={capture} caption="Demo" />
+
+I developed a web-based dashboard to monitor the status of physical and virtual machines for a research project in the lab.
+The server was developed using the *Express* framework, and real-time machine information updated in the *MySQL* database is sent to clients connected through WebSocket.
+The component that summarizes real-time monitoring information for machines and displays it in a card format was implemented using *Vue.js*.
+The top border color indicates the machine's status, and a dot next to the machine's name blinks when the information is updated, allowing users to check the connection status.

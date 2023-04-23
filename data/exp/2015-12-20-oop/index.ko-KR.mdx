@@ -1,0 +1,36 @@
+---
+title: Advanced Tic-Tac-Toe 
+sub: 객체 지향 프로그래밍과 자료구조 강의 설계 프로젝트
+---
+import { Image } from '@data/figure'
+import capture1 from './capture1.png'
+import capture2 from './capture2.png'
+import capture3 from './capture3.png'
+
+<figure>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+		<Image src={capture1} alt="Intro" />
+		<Image src={capture2} alt="Intro" />
+		<Image src={capture3} alt="Intro" />
+    </div>
+    <figcaption>Demo</figcaption>
+</figure>
+
+본 프로젝트는 Advanced Tic-Tac-Toe 게임을 개발하는 것이 목표입니다.
+클래스를 적절히 설계하고 두 종류 이상의 자료구조를 사용하여야 합니다.
+
+저는 다음과 같이 클래스를 설계하였습니다.
+- `Card`는 카드 모양과 번호를 가집니다.
+- `Player`는 하나 이상의 `Card`를 가집니다.
+- `Slot`은 하나 이상의 `Card`를 가지며, 조건에 따라 `Card`가 추가될 수 있습니다.
+- `Board`는 하나 이상의 `Slot`을 가지며, 빙고가 완성되었는지 확인할 수 있습니다.
+- `Dealer`는 중복되지 않는 `Card`를 생성합니다.
+- `Game`은 다른 클래스를 초기화하고 게임의 상태를 업데이트합니다.
+
+`Player`로부터 임의의 `Card`를 가져올 수 있어야 하므로 `Card`를 *Linked-List*로 관리하였습니다.
+`Board`는 `Slot`으로 구성된 토폴로지에서 빙고를 찾아야 하므로 `Slot`을 *Graph*로 관리하였습니다.
+`Dealer`는 중복 없이 생성된 무작위 순서의 숫자를 *Queue*로 가지고 있습니다.
+한 세션의 게임에서 `Card`의 모양과 번호 조합은 유일해야 하고 반드시 하나의 인스턴스만 존재해야 하므로 `Delaer`만이 `Card`를 `std::unique_ptr`로 인스턴스화할 수 있도록 설계했습니다. 
+
+추가 구현으로 게임의 상태를 *JSON*으로 저장하고 불러올 수 있는 기능을 구현했습니다.
+불러오기 기능은 게임의 상태가 정상적인지 확인하는 로직을 포함합니다.

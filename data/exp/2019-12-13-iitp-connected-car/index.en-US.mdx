@@ -1,0 +1,36 @@
+---
+title: Design of Fault-Tolerant Task Processing Model and Implementation of Inter-Module Communication Interfaces in a Connected Car Environment
+sub: Development of an Edge Cloud Platform for Real-Time Services in Connected Car Mobility
+---
+import { Image } from '@data/figure'
+import overview from './overview.svg'
+
+<Image src={overview} caption="시스템 개요" dark-invert />
+
+The objective of the *<abbr title="Institute of Information & Communications Technology Planning & Evaluation">IITP</abbr>* research project conducted in the laboratory is to reduce job latency by using smartphones as edge nodes.
+My role was to design a fault-tolerant task processing model using a <abbr title="Road Side Unit">RSU</abbr> and to implement a communication interfaces between Data Generator, <abbr title="On Board Unit">OBU</abbr>, <abbr title="Mobile Edge Unit">MEU</abbr>, and the cloud and these components.
+
+The assumed environment for this project is as follows:
+
+- The Data Generator sends pre-collected real vehicle sensor data to OBU, and OBU forwards the data to MEU.
+- MEU verifies the accuracy of the sensor data received from OBU and determines whether there is any anomaly in the vehicle based on the sensor data.
+- MEU accumulates the data received from OBU and compresses it to send to the cloud at regular intervals.
+- If MEU detects any anomaly in the vehicle, it notifies OBU, which in turn notifies other neighboring OBUs.
+
+To communicate with the Data Generator and MEU, OBU runs a server (Switcher) implemented in *Go*.
+Since only *C* was provided as the interface and development environment for inter-OBU communication, I implemented a communication module (Forwarder) in *C*.
+Switcher creates Forwarder as a child process to enable communication with other OBUs through standard input/output streams.
+The Data Generator is a program that provides a GUI to manipulate the data being transmitted and was developed in <em>C#</em> on *.NET*.
+MEU was developed in *Java* on *Android*.
+
+In the above environment, if the MEU (which is user's smartphone) does not function properly, I designed a fault-tolerant model using RSU to enable OBU to process sensor data and transmit it to the cloud even in the event of a fault in MEU.
+
+In the above environment, I designed a fault-tolerant model using RSU to enable OBU to process sensor data and transmit it to the cloud even in the event of a fault in the MEU (which is user's smartphone):
+
+- If the connection between OBU and MEU is lost, OBU sends sensor data to RSU.
+- RSU communicates with multiple OBUs within its coverage and acts as a proxy for data processing.
+- Since vehicles can move to another coverage area, RSUs communicate with adjacent RSUs and transfer data if necessary.
+
+The Switcher in OBU communicates with MEU via *WebSocket*. I implemented the Switcher to exchange Ping-Pong frames with MEU at a dynamic interval, as defined in the *WebSocket* spec, to detect the connection status within half of the message transmission delay.
+If the connection is lost, the Switcher retransmits the data that was just before the disconnection to the RSU.
+To minimize resource usage in RSU, I applied a personal research-perpose serverless platform called *Mee6aaS*, which is used only when a fault occurs in MEU.

@@ -1,0 +1,19 @@
+---
+title: 'Board Game on Smart TV: Rummikub'
+sub: 13th Embedded Software Contest
+---
+import { Image, YouTube } from '@data/figure'
+import cover from './cover.webp'
+
+<Image src={cover} caption="Rummikub" />
+
+The goal of this contest is to develop applications on a Smart TV with *webOS*.
+Our team developed a card game that can be played on a Smart TV as shared public table, with each player receiving their own card on their personal smartphone.
+My role was to manage the game state on the server and send real-time updates of the game state to the client to update their UI state.
+I implemented a responsive web without existing design framework.
+
+<YouTube code="0e5oqbfFaTY" caption="Demo" />
+
+The demo video shows players participating in the game from their own devices.
+When the game is launched on the Smart TV, the game server starts and displays the server address on the screen.
+Players can access the game by open the web page at the displayed address on the Smart TV to play together.

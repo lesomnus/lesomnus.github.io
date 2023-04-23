@@ -1,0 +1,72 @@
+[
+	{
+		"meta": {
+			"date": "2022"
+		},
+		"body": {
+			"en-US": {
+				"title": "Employee of the Year",
+				"given_by": "ThorDrive"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2019"
+		},
+		"body": {
+			"en-US": {
+				"title": "Best Poster Runne-up",
+				"given_by": "16th IEEE International Conference on Mobile Ad-Hoc and Smart Systems"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": {
+				"from": "2014",
+				"to": "2017"
+			}
+		},
+		"body": {
+			"en-US": {
+				"title": "Academic Excellence Scholarship",
+				"given_by": "Yeungnam University"
+			},
+			"ko-KR": {
+				"title": "학업성적우수 장학금",
+				"given_by": "영남대학교"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2016"
+		},
+		"body": {
+			"en-US": {
+				"title": "Grand Prize Winner in Samsung Electronics Division",
+				"given_by": "14th Embedded Software Contest"
+			},
+			"ko-KR": {
+				"title": "삼성전자 부문 최우수상",
+				"given_by": "제14회 임베디드 소프트웨어 경진대회"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2015"
+		},
+		"body": {
+			"en-US": {
+				"title": "Honorable Mention in the App Development Category",
+				"given_by": "Public Data Utilization Idea Contest"
+			},
+			"ko-KR": {
+				"title": "앱 개발 부문 장려상",
+				"given_by": "공공데이터 활용 아이디어 발굴 및 앱 공모전 장려상"
+			}
+		}
+	}
+]

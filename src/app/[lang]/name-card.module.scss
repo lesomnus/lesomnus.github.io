@@ -1,0 +1,14 @@
+.name-card {
+	@apply my-8;
+
+	text-align: center;
+
+	h1 {
+		@apply mb-2;
+		@apply text-5xl font-light;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}

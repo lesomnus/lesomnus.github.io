@@ -1,0 +1,47 @@
+.bookmark {
+	@media print {
+		display: none !important;
+	}
+
+	position: absolute;
+	display: flex;
+	align-items: center;
+
+	margin-top: 0.25rem;
+	margin-left: -2.4rem;
+}
+
+.bookmark::before {
+	position: relative;
+	display: block;
+	content: "";
+
+	width: 1.4rem;
+	height: 0.8rem;
+	@apply bg-amber-500;
+
+	:global(.dark) & {
+		@apply bg-amber-600;
+	}
+}
+
+
+.bookmark::after {
+	position: relative;
+	display: block;
+	content: "";
+
+	background-color: transparent;
+
+	width: 0;
+	height: 0;
+	border-top: 0.4rem solid transparent;
+	border-bottom: 0.4rem solid transparent;
+
+	border-left: 0.4rem solid;
+	@apply border-l-amber-500;
+
+	:global(.dark) & {
+		@apply border-l-amber-600;
+	}
+}

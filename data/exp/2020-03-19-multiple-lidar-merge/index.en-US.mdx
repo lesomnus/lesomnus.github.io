@@ -1,0 +1,9 @@
+---
+title: Real-Time Multiple Lidar Merge
+---
+
+This is a module that collects multiple Lidar point cloud pieces installed on a vehicle and merges them into one large point cloud.
+The module estimates the rotational speed of the lidars in real-time to minimize frame overlap and achieve nearly constant output frequency, even with input delays in some of the lidars.
+If the vehicle's pose information is available, it can correct distortions caused by the vehicle movement speed.
+For performance, input lidars are processed in separate threads, but the real-time merging results are written to the same memory space.
+To minimize contention for shared memory, the buffer is divided into small segments and distributed to Lidar processing threads as needed, and implemented as lock-free.

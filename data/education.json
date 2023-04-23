@@ -1,0 +1,50 @@
+[
+	{
+		"meta": {
+			"date": {
+				"from": "2018-03-01",
+				"to": "2020-02-27"
+			},
+			"gpa": {
+				"val": 4.36,
+				"max": 4.50
+			}
+		},
+		"body": {
+			"en-US": {
+				"title": "M.S. in Computer Science and Engineering",
+				"placename": "Korea University, Seoul, Republic of Korea",
+				"note": "Distributed & Cloud Computing Lab."
+			},
+			"ko-KR": {
+				"title": "컴퓨터학 공학 석사",
+				"placename": "고려대학교 정보대학원",
+				"note": "분산 및 클라우드 컴퓨팅 연구실"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": {
+				"from": "2014-03-01",
+				"to": "2018-02-22"
+			},
+			"gpa": {
+				"val": 4.23,
+				"max": 4.50
+			}
+		},
+		"body": {
+			"en-US": {
+				"title": "B.S. in Information and Communication Engineering",
+				"placename": "Yeungnam University, Gyeongbuk, Republic of Korea",
+				"note": "Intern for 2 years at Multimedia Signal Processing Lab."
+			},
+			"ko-KR": {
+				"title": "정보통신공학심화 공학사",
+				"placename": "영남대학교 기계IT대학",
+				"note": "멀티미디어 신호 처리 연구실에서 2년간 인턴"
+			}
+		}
+	}
+]

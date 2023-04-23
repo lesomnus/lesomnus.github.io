@@ -1,0 +1,17 @@
+flowchart LR
+User--http---Envoy
+
+subgraph Control ["API Server"]
+rest_api["REST API"] & grpc_api["gRPC API"] --- Controller
+end
+Envoy---rest_api & grpc_api
+
+Controller---DB[(PostgreSQL)] & Redis
+
+DB---Agent
+Redis---Agent
+
+subgraph Docker
+Worker
+end
+Agent-- Named Pipe ---Worker

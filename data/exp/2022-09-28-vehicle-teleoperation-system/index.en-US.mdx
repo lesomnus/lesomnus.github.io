@@ -1,0 +1,9 @@
+---
+title: Design and Development of Teleoperation System
+---
+
+I designed and developed a teleoperation system for vehicles, taking into consideration user access control, integration of vehicle sensors, low-latency sensor data streaming, and compatibility with multiple vehicles.
+End-to-end connectivity is simplified by separating the necessary functions for system connection, such as resolving the vehicle's network location and user identification, into broker services.
+For video streaming, I utilized *H.264* and *VP8* codecs using *gStreamer* and allowed the vehicle system to configure *gStreamer* pipelines, separating specific sensor processing logic from the connection system.
+I designed a protocol for abstracting the vehicle control layer to accommodate various types of vehicles.
+The protocol considers real-time performance and includes a latency detection mechanism.

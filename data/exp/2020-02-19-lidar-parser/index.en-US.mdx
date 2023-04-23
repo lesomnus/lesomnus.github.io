@@ -1,0 +1,19 @@
+---
+title: Lidar Parser
+---
+import { Image } from '@data/figure'
+import benchmark from './benchmark.svg'
+
+<Image src={benchmark} caption="Benchmark" />
+
+The purpose of the lidar parser is to construct a point cloud from lidar packets.
+Although the lidar manufacturer provides a library, I needed custom functionality, and since integrating the functionality with the packet parsing process would result in zero-cost implementation, I decided to implement the driver myself.
+In addition, the official library integrated not only packet parsing but also the network stack, and since packet structures varied by lidar model, it was inconvenient to use.
+The library I have implemented provides a unified interface for accessing packet information and shows about 3x better performance than the official library.
+
+To improve performance, the followings are considered:
+- Using the memory space allocated to the packet as is in the network stack.
+- Initializing Polymorphic Objects on the stack.
+- Caching unit vectors to construct point cloud.
+- Data alignment for memory localization.
+- Utilizing <abbr title="Single Instruction Multiple Data">*SIMD*</abbr>.

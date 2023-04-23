@@ -1,0 +1,27 @@
+---
+title: Implementation of a Chat Program using TCP Sockets
+sub: Project Conducted in the Computer Network Class
+---
+import { Image } from '@data/figure'
+import capture1 from './capture1.png'
+import capture2 from './capture2.png'
+import overview from './overview.svg'
+
+<figure>
+    <div className="grid grid-cols-1 gap-2">
+		<Image src={capture1} alt="SH whispers to SY" />
+		<Image src={capture2} alt="SY listens whisper from SH" />
+    </div>
+    <figcaption>Demo</figcaption>
+</figure>
+
+The goal of this project was to implement a chat program using *TCP* sockets.
+The program should provide multiple chat rooms, and allow users in different chat rooms to send private messages to each other.
+
+<Image src={overview} caption="Overview" />
+
+When a client connects to the server, the server creates a `User` object that holds the socket.
+The string input by the user on the client-side is encoded into an appropriate message and sent to the server, where the `Processor` performs the corresponding action based on the received message.
+The `Processor` manipulates instances of `User` and `Room` while performing the action.
+For example, if the action is "send", the content of the message is sent to other `User` objects in the same `Room`.
+The client that receives the message interprets it and displays it on the terminal.

@@ -1,0 +1,199 @@
+[
+	{
+		"meta": {
+			"date": "2019",
+			"pp": {
+				"from": 31,
+				"to": 34
+			}
+		},
+		"body": {
+			"en-US": {
+				"authors": [
+					"Seunghyun Hwang",
+					"Kwangsik Chung",
+					"Joonmin Gil",
+					"Heonchang Yu",
+					"Eunyoung Lee"
+				],
+				"title": "Efficient State Maintenance in Serverless-based Workflow Using Host Storage",
+				"part_of": "The 3rd International conference on Interdisciplinary research on Computer Science, Psychology, and Education (ICICPE 2019)"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2019",
+			"doi": "10.1109/MASSW.2019.00044",
+			"pp": {
+				"from": 170,
+				"to": 171
+			}
+		},
+		"body": {
+			"en-US": {
+				"authors": [
+					"Seunghyun Hwang",
+					"Heeseock Choi",
+					"Heonchang Yu"
+				],
+				"title": "Implementation of Low-latency Message Delivery for Serverless based Workflow",
+				"part_of": "The 16th IEEE International Conference on Mobile Ad-Hoc and Smart Systems (IEEE MASS 2019)"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2019",
+			"doi": "10.3745/PKIPS.y2019m10a.649",
+			"pp": {
+				"from": 649,
+				"to": 652
+			}
+		},
+		"body": {
+			"en-US": {
+				"authors": [
+					"Seunghyun Hwang",
+					"Jihun Kang",
+					"Heonchang Yu"
+				],
+				"title": "Study on Runtime Interface for Cold Start mitigation on Serverless based Workflow Execution",
+				"part_of": "Proceedings of the Korea Information Processing Society Conference"
+			},
+			"ko-KR": {
+				"authors": [
+					"황승현",
+					"강지훈",
+					"유헌창"
+				],
+				"title": "Serverless 기반 워크플로 실행에서 Cold Start 완화를 위한 런타임 인터페이스에 관한 연구",
+				"part_of": "한국정보처리학회"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2019",
+			"doi": "10.3745/PKIPS.y2019m05a.15",
+			"pp": {
+				"from": 15,
+				"to": 18
+			}
+		},
+		"body": {
+			"en-US": {
+				"authors": [
+					"Seunghyun Hwang",
+					"Jihun Kang",
+					"Kwang-Sik Chung",
+					"Heonchang Yu",
+					"Joonmin Gil"
+				],
+				"title": "Tepid Start: Managing Strategy for Idle Serverless Container and Implementation",
+				"part_of": "Proceedings of the Korea Information Processing Society Conference"
+			},
+			"ko-KR": {
+				"authors": [
+					"황승현",
+					"강지훈",
+					"정광식",
+					"유헌창",
+					"길준민"
+				],
+				"title": "Tepid Start: 유휴 Serverless 컨테이너의 관리 전략과 구현",
+				"part_of": "한국정보처리학회"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2018",
+			"doi": "10.3745/PKIPS.y2018m10a.964",
+			"pp": {
+				"from": 964,
+				"to": 967
+			}
+		},
+		"body": {
+			"en-US": {
+				"authors": [
+					"Seunghyun Hwang",
+					"Jihun Kang",
+					"Kwang-Sik Chung",
+					"Heonchang Yu"
+				],
+				"title": "Analysis of Service Restart Time on the Docker Container in IoT Environment",
+				"part_of": "Proceedings of the Korea Information Processing Society Conference"
+			},
+			"ko-KR": {
+				"authors": [
+					"황승현",
+					"강지훈",
+					"정광식",
+					"유헌창"
+				],
+				"title": "IoT 환경에서 도커 컨테이너의 서비스 재시작 시간에 관한 분석",
+				"part_of": "한국정보처리학회"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2018",
+			"doi": "10.3745/PKIPS.Y2018M05A.260",
+			"pp": {
+				"from": 260,
+				"to": 261
+			}
+		},
+		"body": {
+			"en-US": {
+				"authors": [
+					"Seunghyun Hwang",
+					"Bongwoo Bak",
+					"Jaehak Lee",
+					"Heonchang Yu"
+				],
+				"title": "Analysis to Impact of Monitoring interval on Performance of Virtual Machine in Cloud Environments",
+				"part_of": "Proceedings of the Korea Information Processing Society Conference"
+			},
+			"ko-KR": {
+				"authors": [
+					"황승현",
+					"박봉우",
+					"이재학",
+					"유헌창"
+				],
+				"title": "클라우드 환경에서 모니터링 주기가 가상머신의 성능에 미치는 영향 분석",
+				"part_of": "한국정보처리학회"
+			}
+		}
+	},
+	{
+		"meta": {
+			"date": "2018",
+			"doi": "10.8080/1020170079328"
+		},
+		"body": {
+			"en-US": {
+				"authors": [
+					"정호열",
+					"김주곤",
+					"황승현"
+				],
+				"title": "Module for Video Processing, Aparratus and Method for Video Output",
+				"part_of": "Patent Application in South Korea"
+			},
+			"ko-KR": {
+				"authors": [
+					"정호열",
+					"김주곤",
+					"황승현"
+				],
+				"title": "영상 처리 모듈, 영상 출력 장치 및 방법",
+				"part_of": "국내 출원"
+			}
+		}
+	}
+]

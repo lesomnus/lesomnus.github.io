@@ -1,0 +1,32 @@
+---
+title: Cooking Assistant Application on Smartwatch 
+sub: 14th Embedded Software Contest
+---
+import { Image, YouTube } from '@data/figure'
+import capture1 from './capture1.png'
+import capture2 from './capture2.png'
+import capture3 from './capture3.png'
+import capture4 from './capture4.png'
+
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+	<Image src={capture1} caption="Main Page" />
+	<Image src={capture2} caption="Start cooking" />
+	<Image src={capture3} caption="Step Description" />
+	<Image src={capture4} caption="Tiemr Feature" />
+</div>
+
+The goal of this contest is to develop an application for a smartwatch.
+Our team has developed a cooking assistant application that allows users to view cooking recipes using gestures without using their hands while cooking.
+We have also implemented a smartphone application that synchronizes with the smartwatch screen.
+My role was to develop a simple server that responds to recipes and implement the user interface for the smartwatch application.
+Additionally, I defined the messages and synchronization protocols required for synchronizing the screens between the two applications.
+
+The server was implemented using the *Express* framework in *Node.js*, and *MongoDB* was used as the database.
+The smartwatch was developed using web languages with *Tizen* OS, and it communicated with the smartphone via *Bluetooth*.
+
+At the time, I was interested in *REST* and class abstraction, and I implemented the system according to these design principles.
+On the day of the contest, the *Wi-Fi* connection was unstable, possibly due to the numerous communication devices in the area.
+The server connection was abstracted by the `Client` class, and the location of the resources was hierarchically represented according to *REST*.
+With only 30 minutes left before the start of the contest, I quickly implemented the `Client` class based on the file system and was able to successfully complete the demonstration.
+Of course, if I were to implement it again, I would have cached the recipe data, so the unstable server connection would not have been a problem.
+

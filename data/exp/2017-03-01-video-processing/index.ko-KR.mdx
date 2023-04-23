@@ -1,0 +1,37 @@
+---
+title: 영상 처리 모듈, 영상 출력 장치 및 방법 특허
+sub: 졸업작품
+---
+import { Image, TeX } from '@data/figure'
+import flow1 from './flow1.png'
+import flow2 from './flow2.png'
+import flow3 from './flow3.png'
+import flow4 from './flow4.png'
+import overview from './overview.svg'
+import homography from './homography.tex'
+
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+	<Image src={flow1} caption="1. 입력" />
+	<Image src={flow2} caption="2. ROI 투영" />
+	<Image src={flow3} caption="3. 마스크 추출" />
+	<Image src={flow4} caption="4. 출력" />
+</div>
+
+멀티미디어 신호 처리 연구실에서 공부한 내용을 바탕으로 졸업작품을 구상하던 중 아이디어가 괜찮다고 생각되어 특허를 출원하게 되었습니다.
+빔프로젝터의 빔으로부터 발표자의 시력을 보호하는 방법에 관한 내용입니다.
+아이디어를 요약하자면, 빔프로젝터의 영사 영역 방향으로 카메라를 연결해서 입력 영상으로부터 배경과 발표자를 분리하고, 영사될 영상에 발표자 영역을 마스크하여 발표자의 시력이 보호되는 것입니다.
+
+<Image src={overview} caption="시스템 개요" />
+
+*Image Processing Unit*은 카메라 입력 영상으로부터 검출한 전경을 사용자 입력 영상에 마스크하여 빔프로젝터로 출력합니다.
+중요한 과정은 카메라 입력 영상에서 빔프로젝터 영사 영역, 즉 *ROI*를 알아내고 원근 투영 변환을 이용해 왜곡을 보정하는 과정입니다.
+*ROI*를 검출하기 위해 시스템을 시작할 때 빔프로젝터로 인식하기 쉬운 패턴을 출력하여 카메라로부터 패턴을 인식하는 과정을 거칩니다.
+3차원 공간에서 평면 물체의 다른 2차원 평면으로의 원근 투영 변환은 호모그래피 <TeX inline expr="H" /> 로 표현될 수 있습니다.
+어떤 평면 위의 점 <TeX inline expr="(x,y)" />를 다른 평면의의 점 <TeX inline expr="(x\prime,y\prime)" />로 대응 시키는 식은 다음과 같습니다:
+
+<TeX expr={homography} />
+
+알아야 할 변수가 8개이므로, 평면 <TeX inline expr="A" /> 위의 점 4개에 대응되는 평면 <TeX inline expr="B" /> 위의 점 4개를 알면 <TeX inline expr="H" />를 구할 수 있습니다.
+
+졸업작품이기 때문에 구현까지 했으며, 졸업작품인 만큼 *OpenCV*의 행렬 클래스와 이미지 인코딩/디코딩 함수를 제외한 대부분의 기능(원근 투영 변환, 코너 검출, 영상 스트리밍, *Windows* 스크린 캡처 등)을 직접 구현하였습니다.
+

@@ -1,0 +1,21 @@
+.noop {
+	// This style sheet is for the rendered `mdx` but is not imported in output html if it is not referenced by `/src/**/*.tsx`.
+	// I don't know why. So I just make an empty style and reference it in the `/src/app/layout.tsx`.
+}
+
+.ul {
+	list-style-type: disc;
+	list-style-position: outside;
+	padding-left: 1.2em;
+}
+
+.code {
+	@apply px-1 py-0.5;
+	@apply rounded-md;
+
+	@apply bg-gray-200/50;
+
+	:global(.dark) & {
+		@apply bg-gray-600/25;
+	}
+}

@@ -1,0 +1,21 @@
+---
+title: 위치 기반 갤러리 커뮤니티
+sub: 공공데이터 활용 아이디어 발굴 및 앱 공모전
+---
+import { Image } from '@data/figure'
+import login from './login.png'
+import post from './post.png'
+
+<div className="grid grid-cols-2 gap-2">
+	<Image src={login} caption="Login Page" />
+	<Image src={post} caption="Post Page" />
+</div>
+
+본 공모전의 목표는 공공으로 제공되는 데이터를 활용한 서비스를 구현하는 것입니다.
+전국의 명소 데이터를 이용하여 커뮤니티 애플리케이션을 개발하였습니다.
+서버는 주기적으로 명소 공공데이터를 조회하여 명소의 이름으로 갤러리 게시판을 생성합니다.
+이용자들은 해당 게시판에, 명소에서 찍은 사진이나 영상을 올려 공유할 수 있습니다.
+제 역할은 *REST*로 게시판의 정보를 제공하는 서버와 *Android*에서 서버로부터 정보를 가져오는 모듈을 개발하는 것이었습니다.
+
+웹서버는 *Node.js*로 *Express* 프레임워크를 이용하여 구현되었습니다.
+이용자가 업로드하는 사진의 메타데이터와 미리 입력된 해당 명소의 *GPS* 값을 대조하여 실제 해당 위치에서 촬영된 것인지 확인하여 관련 없는 사진의 업로드를 필터링하는 기능이 포함되어 있습니다.

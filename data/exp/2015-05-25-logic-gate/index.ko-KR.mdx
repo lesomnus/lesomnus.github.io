@@ -1,0 +1,15 @@
+---
+title: 동기 논리회로 설계
+sub: 논리 회로 강의 설계 프로젝트
+---
+import { Image } from '@data/figure'
+import circuit_diagram from './circuit-diagram.png'
+
+<Image src={circuit_diagram} caption="Circuit Diagram" />
+
+본 프로젝트는 논리 회로 소자와 *555-timer*를 이용하여 *7-segment*에 주어진 숫자를 차례대로 1초마다 출력하는 회로를 설계하고 제작하는 것이 목표입니다.
+저는 0, 1, 3을 출력해야 했습니다.
+
+과제의 핵심인 카운터 회로는 2개의 *negative-edge-triggered J-K flip-flop* 이용하여 mod-3인 상향 카운터로 구현되었습니다.
+3은 2진수로 11<sub>(2)</sub>이므로 카운터가 2를 출력할 때 두 *flip-flop* 프리셋 시켜주었습니다.
+이때 첫 번째 *flip-flop*의 *Q*와 두 번째 *flip-flop*의 *~Q*를 입력으로 받아 0을 출력하기 위해 OR gate가 사용되었습니다.

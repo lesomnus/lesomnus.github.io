@@ -1,0 +1,31 @@
+---
+title: 스마트워치 요리 보조 애플리케이션
+sub: 제 14회 임베디드 소프트웨어 경진대회
+---
+import { Image, YouTube } from '@data/figure'
+import capture1 from './capture1.png'
+import capture2 from './capture2.png'
+import capture3 from './capture3.png'
+import capture4 from './capture4.png'
+
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+	<Image src={capture1} caption="메인 메뉴" />
+	<Image src={capture2} caption="요리 시작" />
+	<Image src={capture3} caption="과정 설명" />
+	<Image src={capture4} caption="타이머 기능" />
+</div>
+
+본 공모전의 목표는 스마트 워치에서 애플리케이션을 개발하는 것입니다.
+저희 팀은 사용자가 요리하면서 손을 사용하지 않고 제스처를 이용해 요리 레시피를 볼 수 있는 요리 보조 애플리케이션을 개발했습니다.
+또한 스마트 워치와 화면이 동기화되는 스마트폰 애플리케이션도 구현하였습니다.
+제 역할은 레시피를 응답해 주는 간단한 서버와 스마트 워치 애플리케이션의 UI 구현이었습니다.
+그리고 두 애플리케이션 사이의 화면을 동기화하기 위한 메시지 및 동기화 프로토콜을 정의하였습니다.
+
+서버는 *Node.js*에 *Express* 프레임워크를 사용하여 구현되었고, 데이터베이스로 *MongoDB*를 사용하였습니다.
+스마트 워치는 *Tizen* OS가 탑재되어 웹 언어로 애플리케이션을 개발했으며 스마트폰과는 *Bluetooth*로 통신하였습니다.
+
+당시 *REST*와 클래스 추상화에 관심이 있었고 그러한 설계 원리에 맞춰서 구현했었습니다.
+공모전 당일, 장내 수많은 통신 장비로 인해서인지 *Wi-Fi* 연결이 불안정했습니다.
+서버 연결은 `Client` 클래스로 추상화되어 있었고, *REST*에 따라 자원의 위치가 계층적으로 표현되어 있었습니다.
+저는 공모전 시작 전 30분 남짓한 시간 동안 파일 시스템을 기반으로 하는 `Client` 클래스를 구현했고 성공적으로 시연을 마칠 수 있었습니다.
+물론 지금 다시 구현한다면 레시피 데이터를 캐싱했을 것이기 때문에 서버 연결 불안정은 문제가 되지 않았을 것입니다.

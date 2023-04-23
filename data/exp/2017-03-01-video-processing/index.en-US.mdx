@@ -1,0 +1,36 @@
+---
+title: Module for Video Processing, Aparratus and Method for Video Output
+sub: Senior Project
+---
+import { Image, TeX } from '@data/figure'
+import flow1 from './flow1.png'
+import flow2 from './flow2.png'
+import flow3 from './flow3.png'
+import flow4 from './flow4.png'
+import overview from './overview.svg'
+import homography from './homography.tex'
+
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+	<Image src={flow1} caption="1. Input" />
+	<Image src={flow2} caption="2. ROI Projection" />
+	<Image src={flow3} caption="3. Extracted Mask" />
+	<Image src={flow4} caption="4. Output" />
+</div>
+
+I came up with an idea for my senior project based on my studies in the multimedia signal processing lab, and I thought it was a good idea, so I decided to apply for a patent.
+The idea is about protecting the presenter's eyesight from the beam of a projector.
+In summary, by connecting the camera in the direction of the projection area of the projector, separating the background and presenter from the input image, and protecting the eyesight by masking the presenter's area from the projected image.
+
+<Image src={overview} caption="System Overview" />
+
+*Image Processing Unit* uses the foreground detected from the camera input to mask the user input and output it through the beam projector.
+The important process is to identify the *Region Of Interest* (*ROI*), the area of the beam projector image in the camera input image, and correct distortion using perspective transformation.
+To detect the *ROI*, the system initiates a process of projecting an easily recognizable pattern from the beam projector and recognizing it from the camera at the start.
+The perspective transformation of a planar object in 3D space onto another 2D plane can be expressed as homography <TeX inline expr="H" />.
+The formula for mapping a point <TeX inline expr="(x,y)" /> on one plane to a point <TeX inline expr="(x\prime,y\prime)" /> on another plane is as follows:
+
+<TeX expr={homography} />
+
+Since there are eight variables to be determined, knowing the four points on plane <TeX inline expr="A" /> that correspond to four points on plane <TeX inline expr="B" /> is sufficient to calculate <TeX inline expr="H" />.
+
+As this is my senior project, I implemented most of the functionalities (perspective transformation, corner detection, video streaming, *Windows* screen capture, and more) myself, except for the matrix class and image encoding/decoding functions in *OpenCV*.
