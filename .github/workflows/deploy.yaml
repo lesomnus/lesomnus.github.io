@@ -28,10 +28,11 @@ jobs:
           node-version: "18"
           cache: npm
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        with:
-          static_site_generator: next
+      # Does not respect `appdir` feature
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v3
+      #   with:
+      #     static_site_generator: next
 
       - name: Restore cache
         uses: actions/cache@v3
@@ -45,9 +46,6 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Make index.html
-        run: cp ./out/root/index.html ./out/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
