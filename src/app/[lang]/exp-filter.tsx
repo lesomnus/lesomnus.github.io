@@ -109,7 +109,7 @@ export class ExpFilter extends React.Component<Props, State> {
 			>
 				{palette.icon && <palette.icon />}
 				<span>{tag}</span>
-				<span className="pill">{tags[tag]}</span>
+				<span className="pill hidden sm:inline">{tags[tag]}</span>
 			</CheckBox>
 		})
 
@@ -141,7 +141,7 @@ export class ExpFilter extends React.Component<Props, State> {
 					onChange={e => this.setState({ tags_enabled: new Set(e.target.checked ? Object.keys(tags) : undefined) })}
 				>
 					<span>All</span>
-					<span className="pill">{Object.values(tags).reduce((a, v) => a + v, 0)}</span>
+					<span className="pill hidden sm:inline">{Object.values(tags).reduce((a, v) => a + v, 0)}</span>
 				</CheckBox>
 				<button className='btn' onClick={() => this.reset()}>Reset</button>
 				{tag_buttons}

@@ -18,7 +18,7 @@ export const Main: React.FC<Props> = ({ children }) => {
 		document.documentElement.classList[is_dark ? 'add' : 'remove']('dark')
 	}, [is_dark])
 
-	return <main className={['max-w-3xl', 'p-3', 'mx-auto', styles.noop].join(' ')}>
+	return <main className={['max-w-3xl', 'p-2', 'sm:p-3', 'mx-auto', styles.noop].join(' ')}>
 		{children}
 	</main>
 }

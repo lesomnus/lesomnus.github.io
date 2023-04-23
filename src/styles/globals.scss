@@ -92,7 +92,11 @@
 		& *:has(>section),
 		&>section {
 			@apply bg-slate-50;
-			@apply p-8;
+			@apply px-4 py-6;
+
+			@screen sm {
+				@apply p-8;
+			}
 
 			&>section:not(:last-child) {
 				@apply mb-5;

@@ -8,7 +8,6 @@ const nextConfig = {
 	reactStrictMode: true,
 	experimental: {
 		appDir: true,
-		images: { unoptimized: true }
 	},
 	webpack: (config, options) => {
 		// mermaid
