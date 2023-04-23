@@ -7,7 +7,7 @@ import React from 'react'
 import type { MDXContent } from 'mdx/types'
 import dayjs, { Dayjs } from 'dayjs'
 
-import { Excerpt, isExcerpt } from '@data/excerpt'
+import { isExcerpt } from '@data/excerpt'
 
 
 
