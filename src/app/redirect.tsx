@@ -12,7 +12,7 @@ export const Redirect: React.FC = () => {
 			? 'ko-KR'
 			: 'en-US'
 
-		router.push(`/${lang_tgt}`)
+		router.replace(`/${lang_tgt}`)
 	})
 
 	return <></>

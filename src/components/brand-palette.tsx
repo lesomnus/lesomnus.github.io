@@ -5,27 +5,8 @@ import {
 	AiOutlineBook,
 	AiOutlinePaperClip,
 } from 'react-icons/ai'
-import {
-	SiAndroid,
-	SiAnsible,
-	SiBluetooth,
-	SiTypescript,
-	SiCmake,
-	SiDocker,
-	SiJavascript,
-	SiKubernetes,
-	SiHelm,
-	SiMongodb,
-	SiNodedotjs,
-	SiOpencv,
-	SiRedis,
-	SiPostgresql,
-	SiReact,
-	SiVuedotjs,
-	SiVite,
-	SiQt,
-	SiExpress,
-} from 'react-icons/si'
+import * as si from 'react-icons/si'
+
 import {
 	FaJava,
 } from 'react-icons/fa'
@@ -60,52 +41,47 @@ const palettes: Record<string, BrandPalette> = {
 	},
 
 	'Android': {
-		icon: SiAndroid,
+		icon: si.SiAndroid,
 		name: 'Android',
-		color: Color('#3ddc84'),
+		color: Color('#3DDC84'),
 	},
 	'Ansible': {
-		icon: SiAnsible,
+		icon: si.SiAnsible,
 		name: 'Ansible',
-		color: Color('#000000'),
+		color: Color('#EE0000'),
 	},
 	'Bluetooth': {
-		icon: SiBluetooth,
+		icon: si.SiBluetooth,
 		name: 'Bluetooth',
-		color: Color('#0082fc'),
+		color: Color('#0082FC'),
 	},
 	'C++': {
 		name: 'C++',
-		color: Color('#004482'),
-	},
-	'TypeScript': {
-		icon: SiTypescript,
-		name: 'TypeScript',
-		color: Color('#007acc'),
+		color: Color('#00599C'),
 	},
 	'CMake': {
-		icon: SiCmake,
+		icon: si.SiCmake,
 		name: 'CMake',
-		color: Color('#199a46'),
+		color: Color('#064F8C'),
 	},
-	'GitHub': {
-		icon: VscGithubAlt,
-		name: 'Github',
+	'Docker': {
+		icon: si.SiDocker,
+		name: 'Docker',
+		color: Color('#2496ED'),
+	},
+	'Express': {
+		icon: si.SiExpress,
+		name: 'Express',
 		color: Color('#000000'),
 	},
 	'GoLang': {
 		name: 'GoLang',
-		color: Color('#00acd7'),
+		color: Color('#00ADD8'),
 	},
-	'Docker': {
-		icon: SiDocker,
-		name: 'Docker',
-		color: Color('#006db8'),
-	},
-	'Express': {
-		icon: SiExpress,
-		name: 'Express',
-		color: Color('#000000'),
+	'Helm': {
+		icon: si.SiHelm,
+		name: 'Helm',
+		color: Color('#0F1689'),
 	},
 	'Java': {
 		icon: FaJava,
@@ -113,64 +89,69 @@ const palettes: Record<string, BrandPalette> = {
 		color: Color('#f29111'),
 	},
 	'JavaScript': {
-		icon: SiJavascript,
+		icon: si.SiJavascript,
 		name: 'JavaScript',
-		color: Color('#f0da50'),
+		color: Color('#F7DF1E'),
 	},
 	'Kubernetes': {
-		icon: SiKubernetes,
+		icon: si.SiKubernetes,
 		name: 'Kubernetes',
-		color: Color('#326de6'),
-	},
-	'Helm': {
-		icon: SiHelm,
-		name: 'Helm',
-		color: Color('#0f1689'),
+		color: Color('#326CE5'),
 	},
 	'MongoDB': {
-		icon: SiMongodb,
+		icon: si.SiMongodb,
 		name: 'MongoDB',
-		color: Color('#00ed64'),
+		color: Color('#47A248'),
 	},
 	'Node.js': {
-		icon: SiNodedotjs,
+		icon: si.SiNodedotjs,
 		name: 'Node.js',
-		color: Color('#81bd03'),
+		color: Color('#339933'),
 	},
 	'OpenCV': {
-		icon: SiOpencv,
+		icon: si.SiOpencv,
 		name: 'OpenCV',
-		color: Color('#000000'),
-	},
-	'Redis': {
-		icon: SiRedis,
-		name: 'Redis',
-		color: Color('#dc382c'),
+		color: Color('#5C3EE8'),
 	},
 	'PostgreSQL': {
-		icon: SiPostgresql,
+		icon: si.SiPostgresql,
 		name: 'PostgreSQL',
-		color: Color('#336791'),
-	},
-	'React': {
-		icon: SiReact,
-		name: 'React',
-		color: Color('#61dbfb'),
-	},
-	'Vue.js': {
-		icon: SiVuedotjs,
-		name: 'Vue.js',
-		color: Color('#41b883'),
-	},
-	'Vite': {
-		icon: SiVite,
-		name: 'Vite',
-		color: Color('#ffd22a'),
+		color: Color('#4169E1'),
 	},
 	'Qt': {
-		icon: SiQt,
+		icon: si.SiQt,
 		name: 'Qt',
-		color: Color('#41cd52'),
+		color: Color('#41CD52'),
+	},
+	'React': {
+		icon: si.SiReact,
+		name: 'React',
+		color: Color('#61DAFB'),
+	},
+	'Redis': {
+		icon: si.SiRedis,
+		name: 'Redis',
+		color: Color('#DC382D'),
+	},
+	'TypeScript': {
+		icon: si.SiTypescript,
+		name: 'TypeScript',
+		color: Color('#3178C6'),
+	},
+	'Vite': {
+		icon: si.SiVite,
+		name: 'Vite',
+		color: Color('#646CFF'),
+	},
+	'Vue.js': {
+		icon: si.SiVuedotjs,
+		name: 'Vue.js',
+		color: Color('#4FC08D'),
+	},
+	'GitHub': {
+		icon: VscGithubAlt,
+		name: 'Github',
+		color: Color('#181717'),
 	},
 }
 

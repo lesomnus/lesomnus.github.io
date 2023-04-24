@@ -27,13 +27,14 @@ type Props = React.HTMLAttributes<HTMLAnchorElement> & {
 	children?: React.ReactNode
 	lang?: string
 	to: string
+	replace?: boolean
 }
 
 export const Link: React.FC<Props> = ({ children, lang, to, ...rest }) => {
 	const { lang: lang_curr } = useIntl()
 	const target = localePath(lang ?? lang_curr, to)
 
-	return <NextLink {...rest} href={target}>
+	return <NextLink {...rest} href={target} scroll={true}>
 		<LinkContext.Provider value={target}>
 			{children ?? <LinkUrl />}
 		</LinkContext.Provider>

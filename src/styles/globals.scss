@@ -124,7 +124,7 @@
 		}
 	}
 
-	.basic-shadow:hover {
+	.basic-shadow {
 		@apply shadow-lg;
 
 		.dark & {
@@ -144,14 +144,14 @@
 	}
 
 	.btn {
-		@extend .basic-shadow;
-
 		@apply ease-out duration-300;
 		@apply px-2 py-1 rounded;
 		@apply bg-gray-200;
 
 
-		&:hover {
+		&:hover:not(:disabled) {
+			@extend .basic-shadow;
+
 			z-index: 999;
 			filter: brightness(105%);
 		}
@@ -159,13 +159,18 @@
 		.dark & {
 			@apply bg-slate-700;
 
-			&:hover {
+			&:hover:not(:disabled) {
 				filter: brightness(115%);
 			}
 		}
 
 		&:focus-within {
 			@apply ring-2 ring-blue-300 ring-opacity-40;
+		}
+
+		&:disabled {
+			@apply text-gray-500;
+			filter: opacity(0.8);
 		}
 	}
 

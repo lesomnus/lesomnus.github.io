@@ -21,8 +21,9 @@ export const IntlToggle: React.FC = () => {
 	entries.shift()
 	entries[0] = ''
 	return <Link className='w-5 text-center tooltip-target'
-		to={entries.join('/')}
 		lang={lang_tgt}
+		to={entries.join('/')}
+		replace={true}
 	>
 		<span className='font-bold underline'>{text_cur}</span>
 		<span className='tooltip'>{lang_tgt === 'ko-KR' ? 'to Korean' : 'to English'}</span>

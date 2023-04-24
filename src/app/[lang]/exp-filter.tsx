@@ -143,7 +143,9 @@ export class ExpFilter extends React.Component<Props, State> {
 					<span>All</span>
 					<span className="pill hidden sm:inline">{Object.values(tags).reduce((a, v) => a + v, 0)}</span>
 				</CheckBox>
-				<button className='btn' onClick={() => this.reset()}>Reset</button>
+				<button className='btn'
+					disabled={(TAGS_RECOMMENDED.length === tags_enabled.size) && TAGS_RECOMMENDED.every(v => tags_enabled.has(v))}
+					onClick={() => this.reset()}>Reset</button>
 				{tag_buttons}
 			</div>
 			<hr />
