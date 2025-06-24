@@ -1,0 +1,30 @@
+---
+title:  Design and Development of Over-the-air System
+---
+import { Image, Video } from '@data/figure'
+import architecture from './architecture.png'
+import demo_user from './demo-user.png'
+import demo_version from './demo-version.png'
+
+<Image src={architecture} caption="Architecture" />
+
+I designed and implemented an OTA (Over-The-Air) system that identifies the software and firmware versions installed on autonomous vehicles from the server and securely delivers the latest updates.
+The in-vehicle software is distributed as containerized applications and runs on a lightweight Kubernetes environment installed on each vehicle.
+Updates are managed using ArgoCD, allowing seamless adoption of ArgoCD’s built-in deployment strategies.
+Users can also automate declarative deployments and version control as needed.
+
+Key features include:
+ - Secure inter-vehicle communication via mutual TLS (mTLS), using internally issued TLS certificates for authentication and encryption.
+ - Signed container images to prevent execution of unauthorized or tampered images.
+ - Simplified integration between vehicles and the central management system (Nexus) through an onboard agent (Beacon).
+ - Abstraction of vehicle identity and access through a proxy component (Pylon), enhancing usability for both users and developers.
+ - Support for air-gapped environments by embedding a local container image registry within the vehicle, enabling updates without reliance on external networks.
+
+<Video className='print-hidden' src='/nexus-alpha.mp4' />
+
+<div className="grid grid-cols-2 gap-2">
+	<Image src={demo_user} caption="사용자 관리" />
+	<Image src={demo_version} caption="버전 관리" />
+</div>
+
+Implemented a simple UI for demonstration purposes and proposed concepts for user and vehicle management, as well as version management of the software installed on each vehicle.

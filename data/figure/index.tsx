@@ -1,4 +1,5 @@
 export * from './image'
+export * from './video'
 export * from './mermaid'
 export * from './tex'
 export * from './youtube'

@@ -1,0 +1,21 @@
+---
+title:  Design and Development of Fleet Management System
+---
+import { Image, Video } from '@data/figure'
+import architecture from './architecture.png'
+
+<Image src={architecture} caption="Architecture" />
+
+I designed and implemented a system that stores information about vehicles manufactured and delivered to customers in a database, enabling administrators to easily check each vehicle's status and warranty period.
+Customers can use the web-based operations system to monitor the real-time status of their vehicles in operation and remotely control them when necessary.
+The system is flexibly designed to be deployable as a cloud-based SaaS, on-premise, or even in air-gapped environments.
+
+To support integration with existing systems, the architecture clearly separates the data layer from the vehicle control layer.
+The message structure was designed so that the system can infer vehicle status and event sequences solely from received data, regardless of whether all events are received.
+
+Vehicle control functionality is implemented using an abstract unit called an "Operator", with each Operator responsible for a specific vehicle control protocol.
+All system components are required to implement a common set of APIs, enabling seamless portability across in-process modules and remote servers via a unified interface.
+As all related engineers shared the same API knowledge, components such as the Self-Driving Operator for autonomous driving features and the Multi-Agent Operator (VDA5050) for simultaneous control of multiple vehicles could be developed independently by different engineers and integrated into the system without friction.
+The centralized control system, along with clients that communicate directly with individual vehicles, is implemented from a single codebase.
+
+The system supports OpenTelemetry, enabling transparent collection and analysis of internal metrics and external request flows.
