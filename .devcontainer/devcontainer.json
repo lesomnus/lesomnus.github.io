@@ -1,18 +1,10 @@
 {
-	"name": "cv-next",
+	"name": "lesomnus.github.io",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-	"runArgs": [
-		"--network=host"
-	],
 	"customizations": {
 		"vscode": {
-			"settings": {
-				"editor.detectIndentation": false,
-				"editor.insertSpaces": false,
-				"cSpell.diagnosticLevel": "Hint"
-			},
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
 				"dbaeumer.vscode-eslint",
