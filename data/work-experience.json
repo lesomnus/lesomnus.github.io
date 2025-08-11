@@ -1,6 +1,24 @@
 [
 	{
 		"meta": {
+			"title": "System Engineer",
+			"date": {
+				"from": "2025-08-11"
+			}
+		},
+		"body": {
+			"en-US": {
+				"company_name": "Holiday Robotics",
+				"activities": []
+			},
+			"ko-KR": {
+				"company_name": "홀리데이로보틱스",
+				"activities": []
+			}
+		}
+	},
+	{
+		"meta": {
 			"title": "DevOps Engineer",
 			"date": {
 				"from": "2023-06-15",
